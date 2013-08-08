@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NYU Hack Day Tester</title>
+    <title>Parse.ly Trends: Top Ranked Traffic Sources</title>
     <script type="text/javascript" src="lib/jquery/jquery.js"></script>
     <script type="text/javascript" src="d3.js"></script>
     <script type="text/javascript" src="d3.csv.js"></script>
@@ -10,10 +10,6 @@
 body {
   font: 10px sans-serif;
 }
-#chart path {
-    fill: transparent;
-    stroke: black;
-}
 .bar {
   background-color: steelblue;
   text-align: right;
@@ -21,14 +17,45 @@ body {
   margin: 1px;
   color: white;
 }
-#chart rect {
+rect {
     fill: steelblue;
     stroke: white;
 }
-    </style>
+path {
+    fill: transparent;
+    stroke: black;
+}
+h1 { margin-top: 30px; }
+</style>
   </head>
-  <body>
-    <h1>NYU Hack Day, this is a test</h1>
-    <div id="chart"></div>
+  <body style="margin-top: 30px; margin-left: 30px; ">
+    <img src="parsely.png">
+    <div style="width: 600px; font-size: 12px; font-family: Georgia; line-height: 1.8em;">
+        <p>Hundreds of top online news publishers use Parse.ly to track content
+        performance on their site. This report aggregates nearly 5 billion pageviews
+        per month from over 300 million unique visitors to determine what the top
+        sources of traffic are for major news publishers.</p>
+        <p>Below, we define "parse.ly sites" as traffic from one Parse.ly site to another.
+        For example, traffic from Mashable to Arstechnica (both Parse.ly customers) will be
+        listed in this category.</p>
+        <p>We define "news sites" as any other news sites outside of the Parse.ly network.</p>
+        <p>We define "google sites" as an aggregate of all Google-owned properties, e.g. Google.com,
+        Google.ca, and Google News all fall under this.</p>
+        <p>Want to learn more about Parse.ly? Visit <a href="http://parse.ly">http://parse.ly</a>.</p>
+    </div>
+    <h1>Top 10 Traffic Sources</h1>
+    <div id="top_10_sources"></div>
+    <h1>Top 30, Excluding Google and Facebook</h1>
+    <div id="top_30_sources"></div>
+    <h1>Social Networks</h1>
+    <div id="social_networks"></div>
+    <h1>Search Engines</h1>
+    <div id="search_engines"></div>
+    <h1>RSS Readers</h1>
+    <div id="tools"></div>
+    <h1>Content Discovery</h1>
+    <div id="discovery"></div>
+    <h1>Aggregators</h1>
+    <div id="aggregators"></div>
   </body>
 </html>
